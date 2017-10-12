@@ -13,6 +13,6 @@ $pic=80;
 $pic_marker=23;
 $pic_pencil=40;
 $pic_paints = $pic - $pic_marker - $pic_pencil;
-echo $pic_paints;
-
+echo "Дана задача: На школьной выставке $pic рисунков. $pic_marker из них выполнены фломастерами, $pic_pencil карандашами, а остальные — красками. Сколько рисунков, выполненные красками, на школьной выставке?".PHP_EOL;
+echo "Ответ: $pic_paints."
 ?>
