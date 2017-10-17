@@ -147,4 +147,71 @@ function task5_2($str) {
     }
 }
 
+function task6() {
+    $date = time();
+    $date2 = mktime(0,0,0,02,24,2016);
+    echo date('d.m.Y H:i', $date).PHP_EOL;
+    echo date('d.m.Y H:i:s', $date2);
+}
+
+function task7($str) {
+    $n_str = str_replace('К', '', $str);
+    return $n_str;
+}
+function task7_2($str) {
+    $n_str = str_replace('Две', 'Три', $str);
+    return $n_str;
+}
+function task7_reg($str) {
+    $n_str = preg_replace('|К|', '', $str);
+    return $n_str;
+}
+function task7_2_reg($str) {
+    $n_str = preg_replace('|Две|', 'Три', $str);
+    return $n_str;
+}
+
+function task8($str) {
+    $match=[];
+    preg_match('|packets:([0-9]*)\s|u', $str, $match);
+
+    if (preg_match('|:\)|u', $str)) {
+        smile();
+    } elseif ($match[1]>1000) {
+        echo "Сеть есть";
+    } else {
+        echo "Нет сети";
+    }
+}
+function smile() {
+    echo "<pre>".PHP_EOL;
+    echo ("             OOOOOOOOOOO
+         OOOOOOOOOOOOOOOOOOO
+      OOOOOO  OOOOOOOOO  OOOOOO
+    OOOOOO      OOOOO      OOOOOO
+  OOOOOOOO  #   OOOOO  #   OOOOOOOO
+ OOOOOOOOOO    OOOOOOO    OOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+OOOO  OOOOOOOOOOOOOOOOOOOOOOOOO  OOOO
+ OOOO  OOOOOOOOOOOOOOOOOOOOOOO  OOOO
+  OOOO   OOOOOOOOOOOOOOOOOOOO  OOOO
+    OOOOO   OOOOOOOOOOOOOOO   OOOO
+      OOOOOO   OOOOOOOOO   OOOOOO
+         OOOOOO         OOOOOO
+             OOOOOOOOOOOO".PHP_EOL);
+    echo "</pre>".PHP_EOL;
+
+}
+
+function task9($file_name) {
+    echo file_get_contents($file_name);
+}
+function task10($text) {
+    file_put_contents('anothertest.txt', $text);
+}
+
+
 ?>
+
+

@@ -1,5 +1,6 @@
 <?php
 require "functions.php";
+
 task1(["cat", "dog", "rabbit"]);
 echo PHP_EOL;
 
@@ -22,3 +23,22 @@ try {
 
 echo PHP_EOL;
 task5_2("На Доме чЕмОдаН");
+echo PHP_EOL;
+task6();
+echo PHP_EOL;
+echo task7("Карл у Клары украл Кораллы");
+echo PHP_EOL;
+echo task7_2("Две бутылки лимонада");
+echo PHP_EOL;
+echo task7_reg("Карл у Клары украл Кораллы");
+echo PHP_EOL;
+echo task7_2_reg("Две бутылки лимонада");
+echo PHP_EOL;
+task8("RX packets:950381 errors:0 dropped:0 overruns:0 frame:0. :)");
+echo PHP_EOL;
+task9("test.txt");
+echo PHP_EOL;
+task10("Hello again!");
+
+
+?>
