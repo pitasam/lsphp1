@@ -207,6 +207,7 @@ OOOO  OOOOOOOOOOOOOOOOOOOOOOOOO  OOOO
 function task9($file_name) {
     echo file_get_contents($file_name);
 }
+
 function task10($text) {
     file_put_contents('anothertest.txt', $text);
 }
