@@ -106,11 +106,15 @@ function task3() {
     $arr_decode = json_decode(file_get_contents("csv"), true);
 
     foreach ($arr_decode as $num) {
-        $sum += $num;
+
+        if ($num%2 == 0) {
+            $sum += $num;
+        }
     }
 
     return $sum;
 }
+
 
 function task4() {
     //Инициализируем сеанс
