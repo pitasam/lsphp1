@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/main/listusers" class="admin" style="padding:10px;background-color:#e35028;color:white;font-weight:500; margin-bottom: 10px;display: inline-table; border-radius: 5px;">Администрирование</a>
+
+<form class="form-horizontal" action="/users/registration" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Логин</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Логин" name="login" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label">Пароль</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword3" placeholder="Пароль" name="password" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword4" class="col-sm-2 control-label">Пароль (Повтор)</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword4" placeholder="Пароль" name="password2" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputName5" class="col-sm-2 control-label">Имя</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputName5" placeholder="Имя" name="name" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputAge5" class="col-sm-2 control-label">Возраст</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputAge5" placeholder="Возраст" name="age" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputAbout6" class="col-sm-2 control-label">О себе</label>
+        <div class="col-sm-10">
+            <textarea class="form-control" id="inputAbout6" placeholder="О себе" name="about" ></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputAbout6" class="col-sm-2 control-label">Фото</label>
+        <div class="col-sm-10">
+            <input class="form-file" id="" type="file" placeholder="О себе" name="file" >
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default" name="do_signup">Зарегистрироваться</button>
+
+        </div>
+    </div>
+</form>
+</body>
+</html>
