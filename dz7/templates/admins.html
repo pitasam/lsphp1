@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Админка
+    </title>
+    <link rel="stylesheet" href="../views/css/vendors.min.css">
+    <link rel="stylesheet" href="../views/css/main.min.css">
+</head>
+<body>
+
+<style>
+    table, tr, td{
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
+<a href="/users/create">Создать пользователя</a>
+<table>
+{% for user in users %}
+    <tr>
+        <td>
+            {{user.email}}
+        </td>
+        <td>
+            {{user.name}}
+        </td>
+        <td>
+            <img src="/views/photos/{{user.image}}">
+        </td>
+        <td>
+            <a href="/users/edit/{{user.id}}">Изменить</a>
+        </td>
+        <td>
+            <a href="/users/delete/{{user.id}}">Удалить</a>
+        </td>
+    </tr>
+{% endfor %}
+</table>
+
+<a href="/users/create">Создать нового пользователя</a>
+
+<script src="../views/js/vendors.min.js"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script src="../views/js/main.min.js"></script>
+<script src="../views/js/ajax.js"></script>
+
+</body>
+</html>
