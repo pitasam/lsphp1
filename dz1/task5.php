@@ -11,17 +11,12 @@
 $day = rand(1,10);
 echo "Число: $day.".PHP_EOL;
 switch ($day){
-    case 1:
-    case 2:
-    case 3:
-    case 4:
-    case 5:
+    case ($day >= 1) && ($day <= 5):
         echo "Это рабочий день";
-        break;
-    case 6:
-    case 7:
+    break;
+    case ($day == 6) || ($day == 7):
         echo "Это выходной день";
-        break;
+    break;
     default: echo "Неизвестный день";
 }
 
