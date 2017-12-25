@@ -4,3 +4,4 @@ composer.lock
 composer.phar
 composer.json
 vendor/
+vp3/.idea
