@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Good;
+use App\Mail\OrderShipped;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use PHPMailer\PHPMailer\PHPMailer;
 
 
@@ -16,13 +18,6 @@ class GoodController extends Controller
         $goods = Good::all();
         $data['goods'] = $goods;
         return view('goods.listgoods', $data);
-    }
-
-    public function categories()
-    {
-        $cats = Category::all();
-        $data['cats'] = $cats;
-        return view('goods.listcategories', $data);
     }
 
     public function view($id)
@@ -41,14 +36,13 @@ class GoodController extends Controller
 
     public function buy()
     {
+        $name=$_REQUEST['name'];
+        $email=$_REQUEST['email'];
 
-        $name=$_POST['name'];
-        $email=$_POST['email'];
-
-        $this->smtp($email, $name);
+        Mail::to($email)->send(new OrderShipped());
+//        $this->smtp($email, $name);
 
         return redirect('/goods');
-
     }
 
     public function smtp($email, $name)

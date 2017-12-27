@@ -16,30 +16,32 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware'=>'auth'], function() {
+
     Route::get('/goods', 'GoodController@index')->name('goods');
-    Route::get('/goods/categories', 'GoodController@categories')->name('categories');
     Route::get('/goods/view/{id}', 'GoodController@view');
+
+    Route::get('/categories', 'CategoryController@index')->name('categories');
     Route::post('/goods/buy', 'GoodController@buy');
 
 
 
     //admin
-    Route::group(['middleware'=>'admin'], function() {
+    Route::group(['middleware'=>'admin','prefix' => 'admin'], function() {
         Route::get('/admin', 'Admin\AccountController@index')->name('admin');
 
-        Route::get('/admin/create-good', 'Admin\AccountController@create_good');
-        Route::get('/admin/create-cat', 'Admin\AccountController@create_cat');
-        Route::post('/admin/store-good', 'Admin\AccountController@store_good');
-        Route::post('/admin/store-cat', 'Admin\AccountController@store_cat');
+        Route::get('/create-good', 'Admin\AccountController@create_good');
+        Route::get('/create-cat', 'Admin\AccountController@create_cat');
+        Route::post('/store-good', 'Admin\AccountController@store_good');
+        Route::post('/store-cat', 'Admin\AccountController@store_cat');
 
-//        Route::get('/admin/view/{id}', 'Admin\AccountController@view');
-        Route::get('/admin/edit/{id}', 'Admin\AccountController@edit');
-        Route::post('/admin/update/{id}', 'Admin\AccountController@update');
-        Route::get('/admin/destroy/{id}', 'Admin\AccountController@destroy')->where(['id'=>'[0-9]']);
+//      Route::get('/view/{id}', 'Admin\AccountController@view');
+        Route::get('/edit/{id}', 'Admin\AccountController@edit');
+        Route::post('/update/{id}', 'Admin\AccountController@update');
+        Route::get('/destroy/{id}', 'Admin\AccountController@destroy')->where(['id'=>'[0-9]']);
 
-        Route::get('/admin/edit-cat/{id}', 'Admin\AccountController@edit_cat');
-        Route::post('/admin/update-cat/{id}', 'Admin\AccountController@update_cat');
-        Route::get('/admin/destroy-cat/{id}', 'Admin\AccountController@destroy_cat')->where(['id'=>'[0-9]']);
+        Route::get('/edit-cat/{id}', 'Admin\AccountController@edit_cat');
+        Route::post('/update-cat/{id}', 'Admin\AccountController@update_cat');
+        Route::get('/destroy-cat/{id}', 'Admin\AccountController@destroy_cat')->where(['id'=>'[0-9]']);
     });
 });
 

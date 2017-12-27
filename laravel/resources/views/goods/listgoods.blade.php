@@ -32,7 +32,7 @@
                                 <td>{{$good->price}}</td>
                                 <td>{{$good->image}}</td>
                                 <td>{{$good->desc}}</td>
-                                <td><a href="/goods/view/{{$good->id}}" class="btn btn-default">Выбрать</a></td>
+                                <td><a href="/goods/view/{{$good->good_id}}" class="btn btn-default">Выбрать</a></td>
 
                                 @if(Auth::user()->is_admin == "1")
                                     <td><a href="/admin/edit/{{$good->id}}" class="btn btn-default" style="background-color: red; color:white;">Редактировать</a></td>
@@ -41,7 +41,7 @@
                             </tr>
                         @endforeach
                     </table>
-                    <a href="/goods/categories" class="btn btn-default">Список категорий</a>
+                    <a href="/categories" class="btn btn-default">Список категорий</a>
 
                     @if(Auth::user()->is_admin == "1")
                     <a href="/admin/create-good" class="btn btn-primary" style="background-color: red">Создать товар</a>

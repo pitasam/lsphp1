@@ -29,7 +29,7 @@
 
                     </table>
                     <a href="/goods" class="btn btn-default btn-cat">Список товаров</a>
-                    <a href="/goods/categories" class="btn btn-default">Список категорий</a>
+                    <a href="/categories" class="btn btn-default">Список категорий</a>
 
                     <div class="popup" id="popup">
                         <div id="close" class="close"></div>
